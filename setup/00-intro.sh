@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 gum style \
 	--foreground 212 --border-foreground 212 --border double \
 	--margin "1 2" --padding "2 4" \
 	'Setup for the Introduction chapter'
+
+if false; then
 
 gum confirm '
 Are you ready to start?
@@ -74,6 +76,8 @@ gum spin --spinner dot \
 
 kubectl wait --for=condition=healthy provider.pkg.crossplane.io \
     --all --timeout=1800s
+
+fi
 
 echo "## Which Hyperscaler do you want to use?" | gum format
 
